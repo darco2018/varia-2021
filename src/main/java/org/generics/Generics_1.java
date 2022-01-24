@@ -24,12 +24,12 @@ public class Generics_1 {
     ////////////////////////////////////////////////////////////////////////////////
 
     public static void run_2(){
-
         System.out.println("------- upper-bound <T extends class,interface> ---------------");
 
         String str = "Bob";
         StringBuilder sb = new StringBuilder(" is ");
         StringBuffer sbuff = new StringBuffer("ok");
+
         printOnlyCharSequence(str);
         printOnlyCharSequence(sb);
         printOnlyCharSequence(sbuff);
@@ -37,7 +37,6 @@ public class Generics_1 {
         Integer num = 567;
         //printOnlyCharSequence(num); will NOT be printed
     }
-
 
     // EXAMPLE OF multiple bounds. Note &  instead of a comma!!!
     private static <T extends CharSequence & Comparable<T>> void printOnlyCharSequence(T text){
