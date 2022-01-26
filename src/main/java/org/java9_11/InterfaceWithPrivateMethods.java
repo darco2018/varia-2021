@@ -15,9 +15,9 @@ public interface InterfaceWithPrivateMethods {
 
     default void check() {
         String result = staticPrivate();
-        InterfaceWithPrivateMethods pvt = new InterfaceWithPrivateMethods() {
+        InterfaceWithPrivateMethods anonymClassInstance = new InterfaceWithPrivateMethods() {
             // anonymous class
         };
-        result = pvt.instancePrivate();
+        result = anonymClassInstance.instancePrivate();
     }
 }

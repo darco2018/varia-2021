@@ -15,6 +15,7 @@ public class Var {
 
         var company = "Codete"; // infers String
         var characters = company.toCharArray(); // infers char[]
+
         var letters = List.of("a", "b", "c");
         for (var l : letters) {
             System.out.print(l + " ");
@@ -22,25 +23,27 @@ public class Var {
 
         Predicate<String> predicate = (@Nullable var a) -> true;
 
-        // So we can say that polymorphic behavior does not work with the var keyword.
+        //var foo;  cannot infere type without initializer
 
+        // var ints = {0, 1, 2};  must be changed to new int[]{0, 1, 2};
 
-        //var foo; // cannot infere type withoput initializer
-        // var ints = {0, 1, 2}; // new int[]{0, 1, 2};
         //var appendSpace = a -> a + " "; // Lambda requires an explicit target type
 
         /*  var nothing = null;
             var lambda = () -> System.out.println("Pity!");
             var method = this::someMethod;*/
+
     }
 
     /* doesn't compile
-    private var getFoo() {  (var fileList) not possible either
+    private var getFoo() {  getFoo(var fileList) not possible either
         return "foo";
     }
     */
 
 /*
+   // Polymorphic behavior does not work with the var keyword. var list = new ArrayList() will be ArrayList, not List
+
     var users = new ArrayList<User>(); // type resolved: ArrayList<User>
     users = new LinkedList<>(); // error
     */

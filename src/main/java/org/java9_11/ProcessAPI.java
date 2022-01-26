@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 public class ProcessAPI {
 
     public static void main(String[] args) {
+
         ProcessHandle self = ProcessHandle.current();
         long PID = self.pid();
         ProcessHandle.Info procInfo = self.info();
@@ -24,8 +25,9 @@ public class ProcessAPI {
                 "\n\n startTime: " + startTime.get() +
                 "\n cpuUsage: " + cpuUsage.get());
 
-        Stream<ProcessHandle> childProc = ProcessHandle.current().children();
         System.out.println("---------------------------------------------");
+        Stream<ProcessHandle> childProc = ProcessHandle.current().children();
+
         childProc.forEach(procHandle -> {
             System.out.println("@@@");
             System.out.println(procHandle.info());
