@@ -1,6 +1,6 @@
 package org.java12_17;
 
-public class Varia {
+public class TextBlocks {
 
     public static void main(String[] args) {
         /* multi-line strings that contain double quotes, without having to use \n or \" escape sequences:
@@ -43,6 +43,7 @@ public class Varia {
         System.out.println(block4);
         System.out.println("\n");
 
+        // ---------------- String::formatted ----------------------
         // Inserting variables into a text block can be done as usual with the static method String::format,
         // or with the new instance method String::formatted, which is a little shorter to write:
         String block5 = """
@@ -51,6 +52,26 @@ public class Varia {
         System.out.println(block5);
 
 
+        // \ to indicate a new line character is not introduced
+        String multiline = """
+                A quick brown fox jumps over a lazy dog; \
+                the lazy dog howls loudly.""";
+
+        System.out.println(multiline); // A quick brown fox jumps over a lazy dog; the lazy dog howls loudly.
+
+
+    }
+
+    private void jsonUse() {
+        String JSON_STRING_OLD
+                = "{\r\n" + "\"name\" : \"Baeldung\",\r\n" + "\"website\" : \"https://www.%s.com/\"\r\n" + "}";
+
+        String TEXT_BLOCK_JSON = """
+                {
+                    "name" : "Baeldung",
+                    "website" : "https://www.%s.com/"
+                }
+                """;
     }
 
 
