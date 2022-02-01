@@ -2,7 +2,7 @@ package org.design_patterns.factory_method;
 
 import org.design_patterns.factory_method.pizza.*;
 
-public class ItalianFactory extends Pizzeria {
+public class ItalianFactory extends PizzeriaFactory {
 
     @Override
     public Product getProductFromSubclassedFactory(String type) {

@@ -2,8 +2,11 @@ package org.design_patterns.factory_method;
 
 import org.design_patterns.factory_method.pizza.Product;
 
-// Pizzeria doesn't know what Product it is working on
-public abstract class Pizzeria {
+// PizzeriaFactory doesn't know what Product it is working on = the factory lets subclasses decide what product will be used
+// compared to simple Factory we have more control over the roznorodnosc tworzonych obietow
+public abstract class PizzeriaFactory {
+
+    // this class can have all methods to work on a product except the factory method
 
     public Product doStuffOnProduct(String productType){
         Product product = this.getProductFromSubclassedFactory(productType);
@@ -14,5 +17,6 @@ public abstract class Pizzeria {
     }
 
     public abstract Product getProductFromSubclassedFactory(String type);
+    // implementing method could actually create THE same product but witha different set of params
 
 }

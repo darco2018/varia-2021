@@ -4,7 +4,7 @@ import org.design_patterns.factory_method.pizza.AmericanMargharitaPizza;
 import org.design_patterns.factory_method.pizza.AmericanSeaFoodPizza;
 import org.design_patterns.factory_method.pizza.Product;
 
-public class AmericanFactory extends Pizzeria {
+public class AmericanFactory extends PizzeriaFactory {
 
     @Override
     public Product getProductFromSubclassedFactory(String type) {

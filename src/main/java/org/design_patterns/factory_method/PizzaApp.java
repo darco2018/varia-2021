@@ -13,7 +13,7 @@ When the initialization process is relatively simple, and the constructor only r
 public class PizzaApp {
 
     public static void main(String[] args) {
-        Pizzeria pizzeria = new AmericanFactory(); // we specify our choice to a subgroup of products (only American)
+        PizzeriaFactory pizzeria = new AmericanFactory(); // we specify our choice to a subgroup of products (only American)
         Product product = pizzeria.doStuffOnProduct("Margharita"); // we further specify our choice to a prodcut from this subgroup
         // actually, I guess it doesn't have to return a product = enough if
     }
